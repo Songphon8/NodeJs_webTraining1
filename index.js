@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const app = express();
 const port = process.env.port|| 3030;
 
-app.use(express.static('./public'));
+app.use(express.static('public'));
 app.use(morgan("common",{immediate:true}));
 
 app.use('/content',contentRouter)
