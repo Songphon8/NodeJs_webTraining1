@@ -20,7 +20,7 @@ contentRouter เพื่อรับ export จากไฟล์ index.js ท
 ```js
 port = process.env.port || 3030;
 ```
-เพื่อให้เข้าถึงไฟล์ที่อยู่ใน Folder public ซึ่งในที่นี้คือ stylesheet (style.css)  
+ข้าถึงไฟล์ที่อยู่ใน Folder public ซึ่งในที่นี้คือ stylesheet (style.css)  
 ```js
 app.use(express.static(‘public’)
 ```
@@ -28,15 +28,15 @@ app.use(express.static(‘public’)
 ```js
 app.use(morgan(“common”,{immediate:true}));
 ```
-เพิ่อรับ contentRouter ที่กำหนดใว้ใน const
+รับ contentRouter ที่กำหนดใว้ใน const
 ```js
 app.use(‘/content’,contentRouter)
 ```
-เพื่อ redirect เข้าไปที่ content
+redirect เข้าไปที่ content
 ```js
 app.get('/',(req, res)=> res.redirect('/content'));
 ```
-ใช้เพื่อ log ว่า server รันที่ port ไหน ใช้สำหรับตรวจสอบใน Local ว่า Website ใช้ได้ไหม
+log ว่า server รันที่ port ไหน ใช้สำหรับตรวจสอบใน Local ว่า Website ใช้ได้ไหม
 ```js
 app.listen(port,() => console.log(`Server Running at port http://localhost:${port}`));
 ```
