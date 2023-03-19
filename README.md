@@ -20,7 +20,7 @@ contentRouter เพื่อรับ export จากไฟล์ index.js ท
 ```js
 port = process.env.port || 3030;
 ```
-ข้าถึงไฟล์ที่อยู่ใน Folder public ซึ่งในที่นี้คือ stylesheet (style.css)  
+เข้าถึงไฟล์ที่อยู่ใน Folder public ซึ่งในที่นี้คือ stylesheet (style.css)  
 ```js
 app.use(express.static(‘public’)
 ```
