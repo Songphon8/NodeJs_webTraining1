@@ -5,8 +5,8 @@
 ในส่วนของ Node.js ต้องทำการโหลดจากหน้าเว็บมาติดตั้ง  
 ส่วน Express และ Morgan จะติดตั้งโดยการพิมพ์ Command Line ลงใน Terminal และต้องลงใน Directory ที่สร้างเว็บ  
   
-Express : ‘npm install express’  
-Morgan : ‘npm install morgan’  
+Express : npm install express  
+Morgan : npm install morgan  
   
 เมื่อทำการติดตั้งจะได้ ไฟล์ดังนี้  
 ![node component has been added](https://user-images.githubusercontent.com/127969012/226149970-044eb404-afc1-46b3-aa82-eb0b68d14e66.png)  
@@ -40,5 +40,14 @@ log ว่า server รันที่ port ไหน ใช้สำหรั�
 ```js
 app.listen(port,() => console.log(`Server Running at port http://localhost:${port}`));
 ```
-
+  
+## index.js ใน content  
+![index.js file in content directory](https://user-images.githubusercontent.com/127969012/226157328-978b9358-b18d-4815-94f0-5548c6b8209a.png)  
+ไฟล์นี้เปรียบเสมือน Router ระหว่าง content กับ main directory ซึ่งจะทำการรับค่าจาก controller และส่งไปหา index.js ใน main  
+```js
+const router = express.Router();  
+```
+ใช้เป็น middleware สำหรับ routing system  
+## conntroller.js
+![contoller.js](https://user-images.githubusercontent.com/127969012/226157421-8f0430d7-83c1-44e4-8daf-ee5a914ab29f.png)  
 
