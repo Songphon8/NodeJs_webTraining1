@@ -50,4 +50,27 @@ const router = express.Router();
 ใช้เป็น middleware สำหรับ routing system  
 ## conntroller.js
 ![contoller.js](https://user-images.githubusercontent.com/127969012/226157421-8f0430d7-83c1-44e4-8daf-ee5a914ab29f.png)  
+รับค่าจาก model และ view และรัน function listAction เพื่อส่งไปหา index.js  
+ซึ่งเป็น function แบบ async await โดยให้ await รอข้อมูลผ่าน
+```js
+const data = await getAll();
+```
+เมื่อได้แล้วจะนำมา render เป็นเว็ปและรัน variable จาก Data ผ่าน body
+```js
+body (const body = render(data);)
+```
+และตอบสนองโดยการส่ง body ออกไป  
+## model.js
+![model.js](https://user-images.githubusercontent.com/127969012/227240278-cb0adb0a-3a36-4232-b550-381104ce43b1.png)
+ไฟล์ตัวนี้ไว้เก็บ data เพื่อใช้ในการแสดงข้อมูลโดยเก็บข้อมูลแบบ array และส่งข้อมูลไปหา controller.js ผ่าน function getAll() และทำให้วงจร Async สมบูรณ์  
+## view.js และ index.html  
+![view.js](https://user-images.githubusercontent.com/127969012/227240856-c07cb486-9b35-4d86-bc28-2796c31f23a7.png)
+![index.html](https://user-images.githubusercontent.com/127969012/227240878-2c701280-2d19-4d8d-9fb6-41d97624ac42.png)
+ไฟล์ที่ใช้สำหรับ Render หน้าเว็บ โดยมี index.html เป็น template เพื่อให้ทำหน้าเว็บสะดวกขึ้น  
+โดยหน้าเว็บมีต้นแบบมาจาก https://help.abstract.com/hc/en-us เพื่อฝึกทำหน้าเว็บ และดัดแปลงเพื่อให้ทำการแสดงข้อมูลจาก Model ขึ้นหน้าเว็บได้  
+และ .join(‘’) ใช้เพื่อลบ ‘,’ ที่แสดงผลระหว่าง array ออก
+![Show model.js data thought view.js](https://user-images.githubusercontent.com/127969012/227241536-fc8faef3-9415-4574-a5cc-92ac03300c1c.png)  
 
+## style.css
+![style.css](https://user-images.githubusercontent.com/127969012/227242365-991bdb7d-f968-4410-b006-c256d30e55b5.png)
+ใช้สำหรับตกแต่งหน้าเว็บให้เป็นไปตามต้องการ ซึ่งมีการทำให้เป็น Responsive และจัดให้หน้าเว็บอยู่ในความเหมาะสม
