@@ -1,0 +1,25 @@
+extends layout.pug
+
+block content
+    span#header have a problem? submit a ticket below
+    .middle 
+        form(action="/content/views/save", method="post") 
+            input(type="hidden", name="id" id="id" value="#{ticket.id}")
+            label(for="problem")  What problem you have
+            br
+            input#problem(type="text", name="problem")
+            br
+            label(for="describe")  Describe the problem 
+            br
+            textarea#describe(name="describe",value="#{ticket.describe}" cols="40", rows="10") 
+            br
+            input.button-middle(type="submit")
+        
+        table
+            th
+            th 
+            th 
+            - for (let ticket of allticket)
+                   tr 
+                        td #{ticket.problem}
+                        td #{ticket.describe}

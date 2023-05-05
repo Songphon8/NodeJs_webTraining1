@@ -1,0 +1,14 @@
+extends layout.pug
+include quoteblock.pug
+
+
+block content
+    span#header What can we do for you?
+    .slideshow-container
+        -   for (let content of data)
+                +quoteblock(content)
+    .middle 
+        h2 Have a problem when using Lesvest?
+        br
+        a(href="/content/views/form") 
+            button.button-middle submit a ticket here

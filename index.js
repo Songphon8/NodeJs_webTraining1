@@ -5,8 +5,11 @@ const morgan = require('morgan');
 const app = express();
 const port = process.env.port|| 3030;
 
+app.set("view engine","pug");
+app.set("views",'./content/views');
 app.use(express.static('public'));
 app.use(morgan("common",{immediate:true}));
+app.use(express.urlencoded({ extended: false}));
 
 app.use('/content',contentRouter)
 

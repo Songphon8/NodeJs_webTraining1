@@ -40,6 +40,13 @@ ul {
     padding-left: 0;
 }
 
+table{
+    border: 1px solid;
+    border-radius: 1em;
+    margin: 1em;
+    padding: 1px;
+}
+
 #header{
     font-size: 50px;
     font-weight: 700;
@@ -50,6 +57,22 @@ ul {
     padding: 1.8em;
     background-color: #C3FF8D ;
 
+}
+
+.middle{
+    display: contents;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-middle{
+    background-color: #202020;
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 1em;
+    align-self: center;
+    margin-bottom: 2%;
 }
 
 .slideshow-container {
@@ -108,4 +131,9 @@ ul {
     display: block;
     width: 100%;
     margin: calc(10%/3);
+}
+
+button:hover{
+    background-color: #404040;
+    transition-duration: 0.2s;
 }
